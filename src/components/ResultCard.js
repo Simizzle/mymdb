@@ -7,8 +7,8 @@ export const ResultCard = ({ user, movie, watched, watchlist, watchlistCount, se
  
    
     
-console.log(movie)
-console.log(watchlist[0].title,movie.title)
+// console.log(movie)
+// console.log(watchlist[0].title, movie.title)
       let isWatched 
        watched.forEach((watchedMovie)=>{
         if(watchedMovie.title === movie.title){
@@ -24,7 +24,7 @@ console.log(watchlist[0].title,movie.title)
     })
      
   let watchlistDisabled 
-  if(isWatched ||isWatchlist){
+  if(isWatched || isWatchlist){
     watchlistDisabled = true
   } else{
     watchlistDisabled =false

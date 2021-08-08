@@ -2,7 +2,7 @@ import React from "react";
 
 import { addMovieToUserWatched,  movieMoveFromWatchedToWatchlist,  removeMovieUserWatched, removeMovieUserWatchlist } from "../utils";
 
-export const MovieControls = ({ user, type, movie ,watchlistCount, setWatchlistCount, watchedCount, setWatchedCount }) => {
+export const FeaturedMovieControls = ({ user, type, movie ,watchlistCount, setWatchlistCount, watchedCount, setWatchedCount }) => {
 
   return (
     <div className="inner-card-controls">
@@ -17,21 +17,6 @@ export const MovieControls = ({ user, type, movie ,watchlistCount, setWatchlistC
           <button
             className="ctrl-btn"
             onClick={() => removeMovieUserWatchlist(user, movie, watchlistCount, setWatchlistCount)}
-          >
-            <i className="fa-fw fa fa-times"></i>
-          </button>
-        </>
-      )}
-
-      {type === "watched" && (
-        <>
-          <button className="ctrl-btn" onClick={() => movieMoveFromWatchedToWatchlist(user, movie, watchlistCount, setWatchlistCount, watchedCount, setWatchedCount)}>
-            <i className="fa-fw far fa-eye-slash"></i>
-          </button>
-
-          <button
-            className="ctrl-btn"
-            onClick={() => removeMovieUserWatched(user, movie, watchedCount, setWatchedCount)}
           >
             <i className="fa-fw fa fa-times"></i>
           </button>

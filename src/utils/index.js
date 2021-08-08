@@ -3,7 +3,7 @@ export const fetchUsers = async (e, email, username, pass, setUser) => {
   try {
     let response;
     if (email) {
-      response = await fetch(`${process.env.REACT_APP_API_NAME}users`, {
+      response = await fetch(`${process.env.REACT_APP_REST_API}users`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -14,7 +14,7 @@ export const fetchUsers = async (e, email, username, pass, setUser) => {
       });
     } else {
       response = await fetch(
-        `${process.env.REACT_APP_API_NAME}users/${username}`
+        `${process.env.REACT_APP_REST_API}users/${username}`
       );
     }
     const data = await response.json();
@@ -27,7 +27,7 @@ export const fetchUsers = async (e, email, username, pass, setUser) => {
 export const editUsername = async (e, oldUsername, newUsername) => {
   e.preventDefault();
   try {
-    await fetch(`${process.env.REACT_APP_API_NAME}users`, {
+    await fetch(`${process.env.REACT_APP_REST_API}users`, {
       method: "Put",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -48,7 +48,7 @@ export const editPassword = async (
 ) => {
   e.preventDefault();
   try {
-    await fetch(`${process.env.REACT_APP_API_NAME}users`, {
+    await fetch(`${process.env.REACT_APP_REST_API}users`, {
       method: "Put",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -65,7 +65,7 @@ export const editPassword = async (
 export const editEmail = async (e, oldUsername, oldPassword, newEmail) => {
   e.preventDefault();
   try {
-    await fetch(`${process.env.REACT_APP_API_NAME}users`, {
+    await fetch(`${process.env.RREACT_APP_REST_API}users`, {
       method: "Put",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -81,7 +81,7 @@ export const editEmail = async (e, oldUsername, oldPassword, newEmail) => {
 
 export const deleteUser = async (e, oldUsername, oldPassword) => {
   e.preventDefault();
-  await fetch(`${process.env.REACT_APP_API_NAME}deleteUsers`, {
+  await fetch(`${process.env.REACT_APP_REST_API}deleteUsers`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -94,7 +94,7 @@ export const deleteUser = async (e, oldUsername, oldPassword) => {
 export const fetchUsersMoviesWatched = async (user,watched, setWatched) => {
  
   const response = await fetch(
-    `${process.env.REACT_APP_API_NAME}users/watched/${user}`
+    `${process.env.RREACT_APP_REST_API}users/watched/${user}`
   );
   
   const data = await response.json();
@@ -125,7 +125,7 @@ export const addMovieToUserWatched = async (
   setWatchedCount
 ) => {
   console.log(movie);
-  await fetch(`${process.env.REACT_APP_API_NAME}users/watched/add`, {
+  await fetch(`${process.env.REACT_APP_REST_API}users/watched/add`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -142,7 +142,7 @@ export const removeMovieUserWatched = async (
   watchedCount,
   setWatchedCount
 ) => {
-  await fetch(`${process.env.REACT_APP_API_NAME}users/watched/remove`, {
+  await fetch(`${process.env.REACT_APP_REST_API}users/watched/remove`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -157,7 +157,7 @@ export const fetchUsersMoviesWatchlist = async (user,watchlist, setWatchlist) =>
   
   console.log("fetchwatchedlist");
   const response = await fetch(
-    `${process.env.REACT_APP_API_NAME}users/watchlist/${user}`
+    `${process.env.REACT_APP_REST_API}users/watchlist/${user}`
   );
   
   const data = await response.json();
@@ -191,7 +191,7 @@ export const addMovieToUserWatchlist = async (
 ) => {
   console.log({ movie: movie.title, user: user });
   const response = await fetch(
-    `${process.env.REACT_APP_API_NAME}users/watchlist/add`,
+    `${process.env.REACT_APP_REST_API}users/watchlist/add`,
     {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -213,7 +213,7 @@ export const removeMovieUserWatchlist = async (
   setWatchlistCount
 ) => {
   console.log({remove:user})
-  await fetch(`${process.env.REACT_APP_API_NAME}users/watchlist/remove`, {
+  await fetch(`${process.env.REACT_APP_REST_API}users/watchlist/remove`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({

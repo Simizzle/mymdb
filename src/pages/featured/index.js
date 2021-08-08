@@ -27,7 +27,8 @@ export const Featured = () => {
           </div>
 
           {
-            (results.length = 20 (
+            // (results.length == 20 
+            (
               <div className="movie-grid">
                 {results.map((movie) => (
                   <FeaturedMovieCard
@@ -37,7 +38,7 @@ export const Featured = () => {
                   />
                 ))}
               </div>
-            ))
+            )
           }
         </div>
       </div>
