@@ -26,8 +26,8 @@ export const Home = ({user}) => {
 
   useEffect((
   ) => {
-    fetchUsersMoviesWatched(user,watched, setWatched)
-  },[watchedCount])
+    fetchUsersMoviesWatched(user, watched, setWatched)
+  }, [watchedCount])
 
 
 
